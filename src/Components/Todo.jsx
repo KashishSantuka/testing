@@ -60,7 +60,7 @@ export const Todo = ({ todo, setTodo, headerOnly, tableOnly }) => {
   const handleStatusToggle = async (task) => {
     const updatedStatus = task.status === 'todo' ? 'done' : 'todo';
     try {
-      await axios.put(`http://localhost:3000/task/${task.id}`, { status: updatedStatus });
+      await axios.put(`https://backend-1-0jmx.onrender.com/task/${task.id}`, { status: updatedStatus });
       setTodo(todo.map(t => t.id === task.id ? { ...t, status: updatedStatus } : t));
     } catch (err) {
       console.error(err);
@@ -69,7 +69,7 @@ export const Todo = ({ todo, setTodo, headerOnly, tableOnly }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/task/${id}`);
+      await axios.delete(`https://backend-1-0jmx.onrender.com/task/${id}`);
       setTodo(todo.filter(t => t.id !== id));
     } catch (err) {
       console.error(err);
