@@ -47,7 +47,7 @@ export const Todo = ({ todo, setTodo, headerOnly, tableOnly }) => {
     if (!title || title.trim() === '') return;
     try {
   const response =    await axios.post(
-  'https://fascinating-rolypoly-b8ea9c.netlify.app/task',
+  'https://backend-1-0jmx.onrender.com/task',
   { title: title.trim() }
 );
       setTodo([...todo, response.data]);
