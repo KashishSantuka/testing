@@ -8,7 +8,7 @@ function App() {
   const [view, setView] = useState('kanban')
 
   useEffect(() => {
-    axios.get('http://localhost:3000/task')
+    axios.get('https://backend-1-0jmx.onrender.com/task')
       .then(res => setTodo(res.data))
       .catch(err => console.error(err));
   }, []);

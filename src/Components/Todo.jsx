@@ -46,7 +46,10 @@ export const Todo = ({ todo, setTodo, headerOnly, tableOnly }) => {
   const handleCreateFunction = async () => {
     if (!title || title.trim() === '') return;
     try {
-      const response = await axios.post('https://fascinating-rolypoly-b8ea9c.netlify.app/task, { title: title.trim() });
+  const response =    await axios.post(
+  'https://fascinating-rolypoly-b8ea9c.netlify.app/task',
+  { title: title.trim() }
+);
       setTodo([...todo, response.data]);
       setTitle('');
     } catch (err) {
